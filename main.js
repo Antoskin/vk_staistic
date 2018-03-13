@@ -11,8 +11,8 @@ $(document).ready(() => {
         searching: false,
         ordering:  false,
         select: false,
-        "paging": false,
-        "lengthChange": false
+        lengthChange: false,
+        "paging": false
      });
 
 
@@ -87,9 +87,14 @@ console.log( mineColors);
 Highcharts.chart('graph-target', {
     chart: {
         plotBackgroundColor: null,
+        paging: false,
+        ordering: false,
+        select: false,
         plotBorderWidth: null,
         plotShadow: false,
-        type: 'pie'
+        type: 'pie',
+        height: 70 + 'px',
+        margin: [0, 0, 0, 0]
     },
  
     tooltip: {
@@ -126,55 +131,55 @@ Highcharts.chart('graph-target', {
 
 /**sec pip**/
 
-Highcharts.chart("root", {
-    chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie'
-    },
+// Highcharts.chart("root", {
+//     chart: {
+//         plotBackgroundColor: null,
+//         plotBorderWidth: null,
+//         plotShadow: false,
+//         type: 'pie'
+//     },
  
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    title: {
-        text: ``
-    },
-    chart: {
-        // Edit chart spacing
-        spacingBottom: 15,
-        spacingTop: 10,
-        spacingLeft: 170,
-        spacingRight: 10,
+//     tooltip: {
+//         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+//     },
+//     title: {
+//         text: ``
+//     },
+//     chart: {
+//         // Edit chart spacing
+//         spacingBottom: 15,
+//         spacingTop: 10,
+//         spacingLeft: 170,
+//         spacingRight: 10,
 
-        // Explicitly tell the width and height of a chart
-        width: null,
-        height: null
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            colors: mineColors,
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                distance: -50,
-                filter: {
-                    property: 'percentage',
-                    operator: '>',
-                    value: 2
-                }
-            }
-        }
-    },
-    series: [{
-        name: 'Share',
-        data: [
-            { name: 'male', y: 61.41 },
-            { name: 'female', y: 11.84 }
-        ]
-    }]
-});
+//         // Explicitly tell the width and height of a chart
+//         width: null,
+//         height: null
+//     },
+//     plotOptions: {
+//         pie: {
+//             allowPointSelect: true,
+//             cursor: 'pointer',
+//             colors: mineColors,
+//             dataLabels: {
+//                 enabled: true,
+//                 format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+//                 distance: -50,
+//                 filter: {
+//                     property: 'percentage',
+//                     operator: '>',
+//                     value: 2
+//                 }
+//             }
+//         }
+//     },
+//     series: [{
+//         name: 'Share',
+//         data: [
+//             { name: 'male', y: 61.41 },
+//             { name: 'female', y: 11.84 }
+//         ]
+//     }]
+// });
 
 }

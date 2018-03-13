@@ -9,11 +9,11 @@
     <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css">
     <link rel="stylesheet" href="/node_modules/datatables/media/css/jquery.dataTables.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    
+    <link href="/node_modules/highcharts/css/highcharts.css" rel="stylesheet">
 </head>
 <body>
     
-    <div id="root" style="max-width: 120px; margin: 0 auto"></div>
+    <!-- <div id="root" style="max-width: 120px; margin: 0 auto"></div> -->
 
     <div class="container">
         <div class="row">
@@ -113,7 +113,7 @@
                                     </th>
                                     <th class="subscribe">{{item.subscribe}}</th>
                                     <th id="gender-sex">
-                                        <div id="graph-target" style=" min-width:150px; max-width: 200px; max-height:120; margin: 0 auto"></div>
+                                        <div id="graph-target" style="min-width:100px; max-width: 150px; max-height:120px; margin: 0 auto"></div>
                                     </th>
                                     <th>Возраст</th>
                                     <th class="cpa">
@@ -164,7 +164,8 @@
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.js"></script>
- <script src="https://code.highcharts.com/highcharts.js"></script> 
+      <script src="/node_modules/highcharts/js/highcharts.js"></script>
+      
 
     <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
 
