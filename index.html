@@ -62,8 +62,8 @@
                             <th data-class-name="priority"></th>
                         </tr>
                     </thead>
-                    <tbody v-for="(item, id) in pablicInfo">
-                        <tr class="top_head"  >
+                    <tbody >
+                        <tr v-for="(item, id) in pablicInfo" class="top_head"  >
                                     <th><img v-bind:src=item.img alt=""></th>
                                     <th>
                                         <p>{{item.date}}</p>

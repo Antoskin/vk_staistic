@@ -73,6 +73,11 @@ window.onload = function () {
         el: '#table_id',
         data: {
             pablicInfo
+        },
+        methods: {
+            maleFemale: () => {
+                
+            }
         }
     })
 
@@ -80,9 +85,7 @@ window.onload = function () {
 
 
         // Make monochrome colors
-let mineColors = ['red', 'green'];
 
-console.log( mineColors);
 // Build the chart
 Highcharts.chart('graph-target', {
     chart: {
@@ -107,7 +110,7 @@ Highcharts.chart('graph-target', {
         pie: {
             allowPointSelect: true,
             cursor: 'pointer',
-            colors: mineColors,
+            
             dataLabels: {
                 enabled: true,
                 format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
@@ -123,8 +126,8 @@ Highcharts.chart('graph-target', {
     series: [{
         name: 'Share',
         data: [
-            { name: 'male', y: 61.41 },
-            { name: 'female', y: 11.84 }
+            { name: 'male', y: 40 },
+            { name: 'female', y: 60 }
         ]
     }]
 });
