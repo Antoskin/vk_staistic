@@ -1,0 +1,36 @@
+.container {
+    #table_id_wrapper {
+        #table_id {
+            width: 100%;
+        }
+     }
+    
+}
+body {
+    .highcharts-data-label {
+        visibility: hidden
+    }
+}
+
+tbody {
+    tr {
+        th {
+        .helmet { display: flex; align-items: center; justify-content: space-around }
+           border: 1px solid silver;
+           height: 50px !important;
+           box-sizing: border-box !important;
+           p {margin: 0}
+            img {
+                 float: left;
+                max-width: 50px;
+            }
+        }
+        .activity {
+           
+            .shar-comments {
+                display: flex;
+                justify-content: space-around;
+            }
+        }
+    }
+}

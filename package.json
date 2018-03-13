@@ -1,0 +1,25 @@
+{
+  "name": "adspoiler",
+  "version": "1.0.0",
+  "description": "statistic",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Antoskin/vk_staistic.git"
+  },
+  "author": "ant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Antoskin/vk_staistic/issues"
+  },
+  "homepage": "https://github.com/Antoskin/vk_staistic#readme",
+  "dependencies": {
+    "datatables": "^1.10.13",
+    "highcharts": "^6.0.7",
+    "jquery": "^3.3.1",
+    "materialize-css": "^0.100.2"
+  }
+}

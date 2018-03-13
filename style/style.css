@@ -1,0 +1,34 @@
+.container #table_id_wrapper #table_id {
+  width: 100%;
+}
+
+body .highcharts-data-label {
+  visibility: hidden;
+}
+
+tbody tr th {
+  border: 1px solid silver;
+  height: 50px !important;
+  box-sizing: border-box !important;
+}
+
+tbody tr th .helmet {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+tbody tr th p {
+  margin: 0;
+}
+
+tbody tr th img {
+  float: left;
+  max-width: 50px;
+}
+
+tbody tr .activity .shar-comments {
+  display: flex;
+  justify-content: space-around;
+}
+/*# sourceMappingURL=style.css.map */
