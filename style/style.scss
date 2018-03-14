@@ -32,7 +32,9 @@ tbody {
             }
         }
         .activity {
-           
+           .material-icons {
+               font-size: 13px
+           }
             .shar-comments {
                 display: flex;
                 justify-content: space-around;
@@ -40,10 +42,3 @@ tbody {
         }
     }
 }
-
-.cont {
-    min-width: 100px;
-    border: 1px solid red;
-    float: left;
-    width: 50%;
-} 

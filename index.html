@@ -13,9 +13,6 @@
 </head>
 <body>
     
-    <!-- <div id="root" style="max-width: 120px; margin: 0 auto"></div> -->
-    <div id="cont1" class="cont"></div>
-    <div id="cont2" class="cont"></div>
     <div class="container">
         <div class="row">
             <div class="col l12 m12 s12">
@@ -113,7 +110,9 @@
                                     </th>
                                     <th class="subscribe">{{item.subscribe}}</th>
                                     <th class="gender-sex">
-                                        <div id="graph-target" style="min-width:100px; max-width: 150px; max-height:120px; margin: 0 auto">
+                                        <div v-bind:id="item.id" 
+                                                class="graphTarget" 
+                                                style="min-width: 144px; max-height:120px; margin: 0 auto">
                                         </div>
                                     </th>
                                     <th>Возраст</th>
@@ -165,12 +164,8 @@
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
     <script src="/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.js"></script>
-    <script src="/node_modules/highcharts/js/highcharts.js"></script>
       
-
-    <!-- <script src="https://code.highcharts.com/highcharts.js"></script> -->
-
-
     <script src="./dist/bundle.js"></script>
+    
 </body>
 </html>

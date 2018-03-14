@@ -1,3 +1,5 @@
+import {highcharts} from 'highcharts';
+
 export default function createChart(containerId) {
     var chartOptions = {
         chart: {
