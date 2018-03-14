@@ -65,29 +65,23 @@
                     <tbody >
                         <!-- start loop with pablics data -->
                         <tr v-for="(item, id) in pablicInfo" class="top_head"  >
-                                    <th width="5%" > 
-                                        <img v-bind:src=item.img alt="">
+                                    <th class="form-preview"> 
+                                        <img v-if="item.img"  v-bind:src="item.img" alt="">
+                                        <img v-else-if="!item.img" src="./img/empty.png" alt=""> 
                                     </th>
-                                    <th>
+                                    <th class="form-date-time">
                                         <p>{{item.date}}</p>
                                         <p>{{item.time}}</p>
                                     </th>
-                                    <th  >
-                                        <span v-if="item.status == 1">
-                                            <i class="material-icons">check
-                                                </i>
-                                        </span>
-                                        <span v-else-if="item.status === 0">
-                                            <i class="material-icons">
-                                                    content_copy
-                                                    </i>
-                                        </span>   
-                                        <span v-else-if="item.status === ''">
-                                                <i class="material-icons">access_time
-                                                        </i>
-                                        </span>  
+                                    <th class="form-status">
+                                        <i v-if="item.status == 1" 
+                                            class="material-icons">check</i>
+                                        <i v-else-if="item.status === 0" 
+                                            class="material-icons">content_copy </i>
+                                        <i v-else-if="item.status === ''" 
+                                            class="material-icons">access_time</i>
                                     </th>
-                                    <th>
+                                    <th class="form-denotation">
                                         <div class="helmet">
                                                 <span>
                                                         <img v-bind:src=item.denotationImg alt="">
@@ -95,10 +89,13 @@
                                                 <p>{{item.denotationName}}</p>
                                         </div>
                                     </th>
-                                    <th><i class="material-icons">info
-                                        </i></th>
-                                    <th>{{item.price}}</th>
-                                    <th class="activity">
+                                    <th class="form-infa">
+                                        <i class="material-icons">info</i>
+                                    </th>
+                                    <th class="form-price">
+                                        <b>{{item.price}}</b>
+                                    </th>
+                                    <th class="form-activity activity">
                                         <div class="likes-count">
                                             <i class="material-icons">favorite</i>
                                             {{item.likes}}
@@ -113,22 +110,24 @@
                                                 {{item.comments}}</p>
                                         </div>
                                     </th>
-                                    <th class="subscribe">{{item.subscribe}}</th>
+                                    <th class="form-subscribes">
+                                        <p>{{item.subscribe}}</p>
+                                    </th>
                                     <!-- PIE GRAPH -->
-                                    <th class="gender-sex">
+                                    <th class="gender-sex form-gender-sex">
                                         <div v-bind:id="item.id" 
                                                 class="graphTarget" 
                                                 style="min-width: 144px; max-height:120px; margin: 0 auto">
                                         </div>
                                     </th>
                                     <!-- COLUMN GRAPH -->
-                                    <th class="age-wrap">
+                                    <th class="age-wrap form-age-wrap">
                                         <div v-bind:id="item.id" 
                                                 class="graphTarget" 
                                                 style="min-width: 144px; max-height:120px; margin: 0 auto">
                                         </div>
                                     </th>
-                                    <th class="cpa">
+                                    <th class="form-cpa">
                                         <p v-if="item.cpa == ''" >
                                                 <i class="material-icons">do_not_disturb</i>
                                         </p>

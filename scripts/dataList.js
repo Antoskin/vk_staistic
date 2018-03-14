@@ -1,7 +1,7 @@
 const pablicInfo = [
     {
         id: `graphTarget0`,
-        img: "./img/dog.png",
+        img: "./img/doors.jpg",
         date: "16.06.17",
         time: "16:20",
         status: 1,
@@ -37,7 +37,7 @@ const pablicInfo = [
     },
     {
         id: `graphTarget2`,
-        img: "",
+        img: "./img/doors.jpg",
         time: "16.06.17",
         time: "16:20",
         status: "",
@@ -52,7 +52,7 @@ const pablicInfo = [
     },
     {
         id: `graphTarget3`,
-        img: "./img/dog.png",
+        img: "./img/doors.jpg",
         date: "16.06.17",
         time: "16:20",
         status: 1,
