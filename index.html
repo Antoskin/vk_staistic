@@ -14,7 +14,8 @@
 <body>
     
     <!-- <div id="root" style="max-width: 120px; margin: 0 auto"></div> -->
-
+    <div id="cont1" class="cont"></div>
+    <div id="cont2" class="cont"></div>
     <div class="container">
         <div class="row">
             <div class="col l12 m12 s12">
@@ -64,7 +65,7 @@
                     </thead>
                     <tbody >
                         <tr v-for="(item, id) in pablicInfo" class="top_head"  >
-                                    <th><img v-bind:src=item.img alt=""></th>
+                                    <th width="5%" ><img v-bind:src=item.img alt=""></th>
                                     <th>
                                         <p>{{item.date}}</p>
                                         <p>{{item.time}}</p>
@@ -95,7 +96,6 @@
                                     <th><i class="material-icons">info
                                         </i></th>
                                     <th>{{item.price}}</th>
-                                    <!-- <th v-html="item.activity"></th> -->
                                     <th class="activity">
                                         <div class="likes-count">
                                             <i class="material-icons">favorite</i>
@@ -112,8 +112,9 @@
                                         </div>
                                     </th>
                                     <th class="subscribe">{{item.subscribe}}</th>
-                                    <th id="gender-sex">
-                                        <div id="graph-target" style="min-width:100px; max-width: 150px; max-height:120px; margin: 0 auto"></div>
+                                    <th class="gender-sex">
+                                        <div class="graph-target" style="min-width:100px; max-width: 150px; max-height:120px; margin: 0 auto">
+                                        </div>
                                     </th>
                                     <th>Возраст</th>
                                     <th class="cpa">

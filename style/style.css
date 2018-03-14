@@ -31,4 +31,11 @@ tbody tr .activity .shar-comments {
   display: flex;
   justify-content: space-around;
 }
+
+.cont {
+  min-width: 100px;
+  border: 1px solid red;
+  float: left;
+  width: 50%;
+}
 /*# sourceMappingURL=style.css.map */

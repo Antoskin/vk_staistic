@@ -36,7 +36,8 @@ window.onload = function () {
             subscribe: 2875,
             sex:"m",
             age: "17",
-            cpa: "2.6 р."
+            cpa: "2.6 р.",
+
         },
         {
             img: "",
@@ -50,7 +51,8 @@ window.onload = function () {
             subscribe: 3400,
             sex:"m",
             age: "17",
-            cpa: ""
+            cpa: "",
+
         },
         {
             img: "",
@@ -64,11 +66,13 @@ window.onload = function () {
             subscribe: 666,
             sex:"m",
             age: "17",
-            cpa: "8.6 р."
+            cpa: "8.6 р.",
         },
     ]
     
     
+
+
     var jj = new Vue({
         el: '#table_id',
         data: {
@@ -80,109 +84,44 @@ window.onload = function () {
             }
         }
     })
+   
+  
 
+    $(function(){
+        createChart('cont1');
+        createChart('cont2');    
+    });
 
-
-
-        // Make monochrome colors
-
-// Build the chart
-Highcharts.chart('graph-target', {
-    chart: {
-        plotBackgroundColor: null,
-        paging: false,
-        ordering: false,
-        select: false,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie',
-        height: 70 + 'px',
-        margin: [0, 0, 0, 0]
-    },
- 
-    tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-    },
-    title: {
-        text: ``
-    },
-    plotOptions: {
-        pie: {
-            allowPointSelect: true,
-            cursor: 'pointer',
-            
-            dataLabels: {
-                enabled: true,
-                format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-                distance: -50,
-                filter: {
-                    property: 'percentage',
-                    operator: '>',
-                    value: 2
+    function createChart(containerId) {
+        var chartOptions = {
+            chart: {
+                type: 'pie',
+                height: 70 + 'px',
+                margin: [0, 0, 0, 0]
+            },
+            tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+            },
+            title: {text: ``},
+            credits: {text: ``},
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    dataLabels: {
+                        format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
+                        distance: 0,
+                    }
                 }
-            }
+            },
+            series: [{
+                name: 'Кол-во',
+                data: [
+                    { name: 'мужчины', y: 40 },
+                    { name: 'женщины', y: 60 }
+                ]
+            }]
         }
-    },
-    series: [{
-        name: 'Share',
-        data: [
-            { name: 'male', y: 40 },
-            { name: 'female', y: 60 }
-        ]
-    }]
-});
-
-/**sec pip**/
-
-// Highcharts.chart("root", {
-//     chart: {
-//         plotBackgroundColor: null,
-//         plotBorderWidth: null,
-//         plotShadow: false,
-//         type: 'pie'
-//     },
- 
-//     tooltip: {
-//         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
-//     },
-//     title: {
-//         text: ``
-//     },
-//     chart: {
-//         // Edit chart spacing
-//         spacingBottom: 15,
-//         spacingTop: 10,
-//         spacingLeft: 170,
-//         spacingRight: 10,
-
-//         // Explicitly tell the width and height of a chart
-//         width: null,
-//         height: null
-//     },
-//     plotOptions: {
-//         pie: {
-//             allowPointSelect: true,
-//             cursor: 'pointer',
-//             colors: mineColors,
-//             dataLabels: {
-//                 enabled: true,
-//                 format: '<b>{point.name}</b><br>{point.percentage:.1f} %',
-//                 distance: -50,
-//                 filter: {
-//                     property: 'percentage',
-//                     operator: '>',
-//                     value: 2
-//                 }
-//             }
-//         }
-//     },
-//     series: [{
-//         name: 'Share',
-//         data: [
-//             { name: 'male', y: 61.41 },
-//             { name: 'female', y: 11.84 }
-//         ]
-//     }]
-// });
+        $('#' + containerId).highcharts(chartOptions);
+    }
 
 }
