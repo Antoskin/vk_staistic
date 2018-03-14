@@ -1,8 +1,6 @@
 import {highcharts} from 'highcharts';
 
 export default function createChart(containerId, mal, fem) {
-    // console.log(mal)
-    // console.log(fem)
     var chartOptions = {
         chart: {
             type: 'pie',
@@ -31,6 +29,6 @@ export default function createChart(containerId, mal, fem) {
             ]
         }]
     }
-    $('#' + containerId).highcharts(chartOptions);
+    $('.gender-sex #' + containerId).highcharts(chartOptions);
 }
 

@@ -12,6 +12,8 @@
     <link href="/node_modules/highcharts/css/highcharts.css" rel="stylesheet">
 </head>
 <body>
+
+    <section id="root"></section>
     
     <div class="container">
         <div class="row">
@@ -61,8 +63,11 @@
                         </tr>
                     </thead>
                     <tbody >
+                        <!-- start loop with pablics data -->
                         <tr v-for="(item, id) in pablicInfo" class="top_head"  >
-                                    <th width="5%" ><img v-bind:src=item.img alt=""></th>
+                                    <th width="5%" > 
+                                        <img v-bind:src=item.img alt="">
+                                    </th>
                                     <th>
                                         <p>{{item.date}}</p>
                                         <p>{{item.time}}</p>
@@ -109,13 +114,20 @@
                                         </div>
                                     </th>
                                     <th class="subscribe">{{item.subscribe}}</th>
+                                    <!-- PIE GRAPH -->
                                     <th class="gender-sex">
                                         <div v-bind:id="item.id" 
                                                 class="graphTarget" 
                                                 style="min-width: 144px; max-height:120px; margin: 0 auto">
                                         </div>
                                     </th>
-                                    <th>Возраст</th>
+                                    <!-- COLUMN GRAPH -->
+                                    <th class="age-wrap">
+                                        <div v-bind:id="item.id" 
+                                                class="graphTarget" 
+                                                style="min-width: 144px; max-height:120px; margin: 0 auto">
+                                        </div>
+                                    </th>
                                     <th class="cpa">
                                         <p v-if="item.cpa == ''" >
                                                 <i class="material-icons">do_not_disturb</i>
