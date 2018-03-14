@@ -24,8 +24,8 @@ export default function createChart(containerId, mal, fem) {
         series: [{
             name: 'Кол-во',
             data: [
-                { name: 'мужчины', y: mal },
-                { name: 'женщины', y: fem }
+                { name: 'male', y: mal },
+                { name: 'female', y: fem }
             ]
         }]
     }

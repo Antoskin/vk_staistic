@@ -15,7 +15,7 @@ const pablicInfo = [
         subscribe: 2875,
         malePopulation: 20,
         femalePopulation: 80,
-        age: "17",
+        age: [20,40,14,7,10,22,4],
         cpa: "2.6 р.",
 
     },
@@ -31,7 +31,7 @@ const pablicInfo = [
         subscribe: 3400,
         malePopulation: 60,
         femalePopulation: 40,
-        age: "17",
+        age: [30,20,14,7,10,22,4],
         cpa: "",
 
     },
@@ -47,7 +47,7 @@ const pablicInfo = [
         subscribe: 666,
         malePopulation: 50,
         femalePopulation: 50,
-        age: "17",
+        age: [20,40,14,7,44,22,70],
         cpa: "8.6 р.",
     },
     {
@@ -66,9 +66,8 @@ const pablicInfo = [
         subscribe: 2875,
         malePopulation: 75,
         femalePopulation: 25,
-        age: "17",
+        age: [20,20,14,7,40,22,4],
         cpa: "2.6 р.",
-
     },
 ]
 

@@ -23,48 +23,40 @@ export default function createChartColumn(id) {
     
         tooltip: {
             headerFormat: '<span style="font-size:11px">{series.name}</span><br>',
-            pointFormat: '<span style="color:{point.color}">{point.name}</span>: <b>{point.y:.2f}%</b> of total<br/>'
+            pointFormat: '<span style="color:{point.color}">{point.age}</span>: <b>{point.y:.2f}%</b><br/>'
         },
-    
         "series": [
             {
                 "name": "age",
                 "colorByPoint": true,
                 "data": [
                     {
-                        "name": "Chrom",
-                        "y": 62.74,
-                       
+                        "age": "14-16",
+                        "y": arguments[1][0],
                     },
                     {
-                        "name": "Firefox",
-                        "y": 10.57,
-                       
+                        "age": "17-19",
+                        "y": arguments[1][1],
                     },
                     {
-                        "name": "Internet Explorer",
-                        "y": 7.23,
-                       
+                        "age": "20-22",
+                        "y": arguments[1][2],
                     },
                     {
-                        "name": "Safari",
-                        "y": 5.58,
-                        
+                        "age": "23-25",
+                        "y": arguments[1][3],
                     },
                     {
-                        "name": "Edge",
-                        "y": 4.02,
-                      
+                        "age": "26-30",
+                        "y": arguments[1][4],
                     },
                     {
-                        "name": "Opera",
-                        "y": 1.92,
-                       
+                        "age": "31-35",
+                        "y": arguments[1][5],
                     },
                     {
-                        "name": "Other",
-                        "y": 7.62,
-                       
+                        "age": "35-90",
+                        "y": arguments[1][6]
                     }
                 ]
             }
