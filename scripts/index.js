@@ -4,7 +4,6 @@ import pablicInfo from './dataList';
 
 
 $(document).ready(() => {
-  
     /* call generation of general form*/ 
     generationForm();
 })
@@ -17,13 +16,14 @@ window.onload = function () {
             pablicInfo
         },
         methods: {
-            
+            //  call pie chart
             maleFemale: function() {
-                let male = this.pablicInfo[0].malePopulation;
                 
                 const howTimesCall = $('.graphTarget').length; //3
                 for(let i = 0; i < howTimesCall; i++) {
-                    createChart(`graphTarget${i}`);
+                    let male = this.pablicInfo[i].malePopulation;
+                    let female = this.pablicInfo[i].femalePopulation;
+                    createChart(`graphTarget${i}`, male, female);
                 }
             }
         }

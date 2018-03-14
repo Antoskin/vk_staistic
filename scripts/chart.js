@@ -1,6 +1,8 @@
 import {highcharts} from 'highcharts';
 
-export default function createChart(containerId) {
+export default function createChart(containerId, mal, fem) {
+    // console.log(mal)
+    // console.log(fem)
     var chartOptions = {
         chart: {
             type: 'pie',
@@ -24,8 +26,8 @@ export default function createChart(containerId) {
         series: [{
             name: 'Кол-во',
             data: [
-                { name: 'мужчины', y: 40 },
-                { name: 'женщины', y: 60 }
+                { name: 'мужчины', y: mal },
+                { name: 'женщины', y: fem }
             ]
         }]
     }
