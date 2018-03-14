@@ -1,0 +1,52 @@
+const pablicInfo = [
+    {
+        img: "./img/dog.png",
+        date: "16.06.17",
+        time: "16:20",
+        status: 1,
+        denotationImg: "./img/dog.png",
+        denotationName: 'Бот Максим',
+        type: "Инфо пост",
+        price: "3 120 р",
+        activity: "<span>1</span><span>2</span><span>3</span>",
+        likes: 10,
+        shares: 17,
+        comments: 104,
+        subscribe: 2875,
+        sex:"m",
+        age: "17",
+        cpa: "2.6 р.",
+
+    },
+    {
+        img: "",
+        time: "16.06.17",
+        time: "16:20",
+        status: 0,
+        denotation: "5421",
+        type: "2011/04/25",
+        price: "3 120 р.",
+        activity: "<span>1</span><span>2</span><span>3</span>",
+        subscribe: 3400,
+        sex:"m",
+        age: "17",
+        cpa: "",
+
+    },
+    {
+        img: "",
+        time: "16.06.17",
+        time: "16:20",
+        status: "",
+        denotation: "5421",
+        type: "2011/04/25",
+        price: "3 120 р.",
+        activity: "<span>1</span><span>2</span><span>3</span>",
+        subscribe: 666,
+        sex:"m",
+        age: "17",
+        cpa: "8.6 р.",
+    },
+]
+
+export default pablicInfo;

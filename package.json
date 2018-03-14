@@ -4,6 +4,7 @@
   "description": "statistic",
   "main": "index.js",
   "scripts": {
+    "devel": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -21,5 +22,9 @@
     "highcharts": "^6.0.7",
     "jquery": "^3.3.1",
     "materialize-css": "^0.100.2"
+  },
+  "devDependencies": {
+    "webpack": "^4.1.1",
+    "webpack-cli": "^2.0.12"
   }
 }
