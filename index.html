@@ -6,148 +6,203 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="/style/style.css">
-    <link rel="stylesheet" href="/node_modules/materialize-css/dist/css/materialize.css">
     <link rel="stylesheet" href="/node_modules/datatables/media/css/jquery.dataTables.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="/node_modules/highcharts/css/highcharts.css" rel="stylesheet">
 </head>
 <body>
 
-    <section id="root"></section>
+
+
+
+<div id="app">
+        <button class="modal-control waves-effect waves-light btn ">Modal</button>
+        
+          <!-- Modal Structure -->
+          <div id="popup" >
+                <div class="container" id="mainer-wrapper">
+                        <h4><b>Аналитика по площадкам</b></h4>
+                        <div class="selectors">
+                            <button class="batn  btn blue accent-1 batn-tabl">Таблица</button>
+                            <button class="batn  btn blue accent-1 batn-graf">График</button>
+                        </div>
+                
+                        <div class="tabs-area">
+                            <div class="siblin target-table active">
+                                    <p class="kind-of">Аналитика данных в таблице</p>
+                                            <div class="row">
+                                                <div class="col l12 m12 s12">
+                                                    <table id="table_id">
+                                                        <thead>
+                                                            <tr class="top_head">
+                                                                <th>Preview</th>
+                                                                <th>Время</th>
+                                                                <th>Статус</th>
+                                                                <th>Площадка</th>
+                                                                <th>Тип</th>
+                                                                <th>Цена</th>
+                                                                <th>Активность</th>
+                                                                <th>Подписок</th>
+                                                                <th>Пол</th>
+                                                                <th>Возраст</th>
+                                                                <th>CPA</th>
+                                                                <th data-class-name="priority"></th>
+                                                            </tr>
+                                                            <tr class="top_filter">
+                                                                <th class="form-preview filter-same"></th>
+                                                                <th class="form-date-time filter-same">
+                                                                    <div class="form-group-sm">
+                                                                        <input type="text" placeholder="От" /> 
+                                                                        <input type="text"  placeholder="До" />
+                                                                    </div>
+                                                                </th>
+                                                                <th class="form-status filter-same">
+                                                                    <input type="search" placeholder="Все &#8661;">
+                                                                </th>
+                                                                <th class="form-denotation filter-same">
+                                                                    <input type="search" placeholder="Поиск..">
+                                                                </th>
+                                                                <th class="form-infa filter-same">
+                                                                        <input type="search" placeholder="&bull; &#8661;">
+                                                                </th>
+                                                                <th class="form-price filter-same">
+                                                                    <div class="form-group-sm">
+                                                                        <input type="text" placeholder="&#9660;От">
+                                                                        <input type="text" placeholder="&#9660;До">
+                                                                    </div>
+                                                                </th>
+                                                                <th class="form-activity activity filter-same">
+                                                                    <div class="form-group-sm">
+                                                                        <input type="text" placeholder="От" /> 
+                                                                        <input type="text"  placeholder="До" />
+                                                                    </div>
+                                                                </th>
+                                                                <th class="form-subscribes filter-same">
+                                                                    <div class="form-group-sm">
+                                                                        <input type="text" placeholder="От" /> 
+                                                                        <input type="text"  placeholder="До" />
+                                                                    </div>
+                                                                </th>
+                                                                <th class="form-gender-sex filter-same">
+                                                                        <div class="form-group-sm">
+                                                                            <input type="text" placeholder="♂, от" /> 
+                                                                            <input type="text" placeholder="♂, до" />
+                                                                        </div>
+                                                                </th>
+                                                                <th class="form-age-wrap filter-same"> 
+                                                                        <input type="text"  placeholder="Все &#8661;"/>    
+                                                                </th>
+                                                                <th class="form-cpa filter-same">
+                                                                        <div class="form-group-sm">
+                                                                                <input type="text" placeholder="От" /> 
+                                                                                <input type="text"  placeholder="До" />
+                                                                        </div>
+                                                                        
+                                                                </th>
+                                                                <th data-class-name="priority"></th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody >
+                                                            <!-- start loop with pablics data -->
+                                                            <tr v-for="(item, id) in pablicInfo" class="top_head"  >
+                                                                        <th class="form-preview"> 
+                                                                            <img v-if="item.img"  v-bind:src="item.img" alt="">
+                                                                            <img v-else-if="!item.img" src="./img/empty.png" alt=""> 
+                                                                        </th>
+                                                                        <th class="form-date-time">
+                                                                            <p>{{item.date}}</p>
+                                                                            <p>{{item.time}}</p>
+                                                                        </th>
+                                                                        <th class="form-status">
+                                                                            <i v-if="item.status == 1" 
+                                                                                class="teal-text accent-3 material-icons">check</i>
+                                                                            <i v-else-if="item.status === 0" 
+                                                                                class="light-blue-text darken-3 material-icons">content_copy </i>
+                                                                            <i v-else-if="item.status === ''" 
+                                                                                class="material-icons">access_time</i>
+                                                                        </th>
+                                                                        <th class="form-denotation">
+                                                                            <div class="helmet">
+                                                                                    <span>
+                                                                                            <img v-bind:src=item.denotationImg alt="">
+                                                                                    </span>
+                                                                                    <p class="light-blue-text darken-3">{{item.denotationName}}</p>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="form-infa">
+                                                                            <i class="material-icons tooltipped"
+                                                                                data-position="top" 
+                                                                                data-delay="50" 
+                                                                                v-bind:data-tooltip="item.type">info</i>
+                                                                        </th>
+                                                                        <th class="form-price ">
+                                                                            <b>{{item.price}}</b>
+                                                                        </th>
+                                                                        <th class="form-activity activity light-blue-text darken-4">
+                                                                            <div class="likes-count ">
+                                                                                <i class="material-icons">favorite</i>
+                                                                                {{item.likes}}
+                                                                            </div>
+                                                                            <div class="shar-comments">
+                                                                                <p>
+                                                                                    <i class="material-icons">screen_share</i>
+                                                                                    {{item.shares}}
+                                                                                </p>
+                                                                                <p>
+                                                                                    <i class="material-icons">forum</i>
+                                                                                    {{item.comments}}</p>
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="form-subscribes ">
+                                                                            <p class="deep-orange-text  accent-4" v-if="item.subscribe > 0">{{item.subscribe}}</p>
+                                                                            <p v-else-if="item.subscribe == 0">0</p>
+                                                                        </th>
+                                                                        <!-- PIE GRAPH -->
+                                                                        <th class="gender-sex form-gender-sex">
+                                                                            <div v-if="item.malePopulation != 0 && item.femalePopulation != 0" v-bind:id="item.id" 
+                                                                                    class="graphTarget" 
+                                                                                    style="min-width: 70px; max-height:120px; margin: 0 auto">
+                                                                            </div>
+                                                                            <i v-else-if="item.malePopulation == 0 && item.femalePopulation == 0" class="material-icons">block</i>
+                                                                        </th>
+                                                                        <!-- COLUMN GRAPH -->
+                                                                        <th class="age-wrap form-age-wrap">
+                                                                            <div v-bind:id="item.id" 
+                                                                                    class="graphTarget" 
+                                                                                    style="min-width: 113px; max-height:120px; margin: 0 auto">
+                                                                            </div>
+                                                                        </th>
+                                                                        <th class="form-cpa">
+                                                                            <p v-if="item.cpa == ''" >
+                                                                                    <i class="material-icons">do_not_disturb</i>
+                                                                            </p>
+                                                                            <p v-else>{{item.cpa}}</p>
+                                                                        </th>
+                                                                        <th data-class-name="priority"></th>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table> 
+                                                </div>
+                                            </div>
+                            </div>
+                            <div class="siblin target-graph">
+                                <p  class="kind-of">Аналитика данных в графике</p>
+                                <div id="target-chart-area"></div>
+                            </div>
+                        </div>
+                    </div>
+          </div>
+</div>
     
-    <div class="container">
-        <div class="row">
-            <div class="col l12 m12 s12">
-                <table id="table_id">
-                    <thead>
-                        <tr class="top_head">
-                            <th>Preview</th>
-                            <th>Время</th>
-                            <th>Статус</th>
-                            <th>Площадка</th>
-                            <th>Тип</th>
-                            <th>Цена</th>
-                            <th>Активность</th>
-                            <th>Подписок</th>
-                            <th>Пол</th>
-                            <th>Возраст</th>
-                            <th>CPA</th>
-                            <th data-class-name="priority"></th>
-                        </tr>
-                        <tr class="top_filter">
-                            <th></th>
-                            <th>
-                                <div class="form-group-sm">
-                                    <input type="text" 
-                                        name="gender_man_from" 
-                                        id="gender_man_from" 
-                                        class="form-control form-filter input-double-filter filter-input" 
-                                        placeholder="♂, от" /> 
-                                    <input type="text" 
-                                        name="gender_man_to" 
-                                        id="gender_man_to" 
-                                        class="form-control form-filter input-double-filter filter-input" 
-                                        placeholder="♂, до" />
-                                </div>
-                            </th>
-                            <th>Статус</th>
-                            <th>Площадка</th>
-                            <th>Тип</th>
-                            <th>Цена</th>
-                            <th>Активность</th>
-                            <th>Подписок</th>
-                            <th>Пол</th>
-                            <th>Возраст</th>
-                            <th>CPA</th>
-                            <th data-class-name="priority"></th>
-                        </tr>
-                    </thead>
-                    <tbody >
-                        <!-- start loop with pablics data -->
-                        <tr v-for="(item, id) in pablicInfo" class="top_head"  >
-                                    <th class="form-preview"> 
-                                        <img v-if="item.img"  v-bind:src="item.img" alt="">
-                                        <img v-else-if="!item.img" src="./img/empty.png" alt=""> 
-                                    </th>
-                                    <th class="form-date-time">
-                                        <p>{{item.date}}</p>
-                                        <p>{{item.time}}</p>
-                                    </th>
-                                    <th class="form-status">
-                                        <i v-if="item.status == 1" 
-                                            class="material-icons">check</i>
-                                        <i v-else-if="item.status === 0" 
-                                            class="material-icons">content_copy </i>
-                                        <i v-else-if="item.status === ''" 
-                                            class="material-icons">access_time</i>
-                                    </th>
-                                    <th class="form-denotation">
-                                        <div class="helmet">
-                                                <span>
-                                                        <img v-bind:src=item.denotationImg alt="">
-                                                </span>
-                                                <p>{{item.denotationName}}</p>
-                                        </div>
-                                    </th>
-                                    <th class="form-infa">
-                                        <i class="material-icons">info</i>
-                                    </th>
-                                    <th class="form-price">
-                                        <b>{{item.price}}</b>
-                                    </th>
-                                    <th class="form-activity activity">
-                                        <div class="likes-count">
-                                            <i class="material-icons">favorite</i>
-                                            {{item.likes}}
-                                        </div>
-                                        <div class="shar-comments">
-                                            <p>
-                                                <i class="material-icons">screen_share</i>
-                                                {{item.shares}}
-                                            </p>
-                                            <p>
-                                                <i class="material-icons">forum</i>
-                                                {{item.comments}}</p>
-                                        </div>
-                                    </th>
-                                    <th class="form-subscribes">
-                                        <p>{{item.subscribe}}</p>
-                                    </th>
-                                    <!-- PIE GRAPH -->
-                                    <th class="gender-sex form-gender-sex">
-                                        <div v-bind:id="item.id" 
-                                                class="graphTarget" 
-                                                style="min-width: 144px; max-height:120px; margin: 0 auto">
-                                        </div>
-                                    </th>
-                                    <!-- COLUMN GRAPH -->
-                                    <th class="age-wrap form-age-wrap">
-                                        <div v-bind:id="item.id" 
-                                                class="graphTarget" 
-                                                style="min-width: 144px; max-height:120px; margin: 0 auto">
-                                        </div>
-                                    </th>
-                                    <th class="form-cpa">
-                                        <p v-if="item.cpa == ''" >
-                                                <i class="material-icons">do_not_disturb</i>
-                                        </p>
-                                        <p v-else>{{item.cpa}}</p>
-                                    </th>
-                                    <th data-class-name="priority"></th>
-                        </tr>
-                    </tbody>
-                </table> 
-            </div>
-        </div>
-    </div>
-   
-   
+    
+  
+
+    
 
 
     <script src="/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="/node_modules/datatables/media/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.15/vue.js"></script>
-      
+    <script src="/node_modules/vue/dist/vue.min.js"></script>
+    <script src="/node_modules/materialize-css/dist/js/materialize.min.js"></script>
     <script src="./dist/bundle.js"></script>
     
 </body>

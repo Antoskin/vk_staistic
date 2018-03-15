@@ -5,7 +5,7 @@ export default function createChart(containerId, mal, fem) {
         chart: {
             type: 'pie',
             height: 70 + 'px',
-            margin: [0, 0, 0, 0]
+            margin: [0, 0, 0, 0],
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'

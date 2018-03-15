@@ -8,7 +8,7 @@ const inject = new Vue({
         pablicInfo
     },
     methods: {
-        maleFemale: function() { //  call pie chart
+        maleFemale: function() { 
             const howTimesCall = $('.gender-sex').length; //count rows
             for(let i = 0; i < howTimesCall; i++) {
                 let male = this.pablicInfo[i].malePopulation; //count male
